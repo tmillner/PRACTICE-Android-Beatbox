@@ -12,13 +12,19 @@
     </style>
 
     <style name="BeatBoxButton" parent="android:style/Widget.Holo.Button">
-        <item name="android:background">@color/dark_blue</item>
+        <item name="android:background">@drawable/button_beat</item>
     </style>
+
+    <!--
+    Following are just used for demonstration purposes
 
     <style name="BeatBoxButton.Strong">
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="StrongBeatBoxButton" parent="@style/BeatBoxButton">
-    <item name="android:textStyle">bold</item>
-</style>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    -->
 </resources>

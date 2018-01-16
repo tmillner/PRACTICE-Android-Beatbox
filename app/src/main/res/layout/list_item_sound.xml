@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-This button will have will not use a specific style
-   style="@style/BeatBoxButton.Strong"
-but will utilize change to all buttons styles
--->
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_item_sound_button"
-    android:layout_width="match_parent"
-    android:layout_height="120dp"
-    tools:text="Sound name">
 
-</Button>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_margin="8dp"
+    >
+    <!--
+    This button will have will not use a specific style
+       style="@style/BeatBoxButton.Strong"
+    but will utilize change to all buttons styles
+    -->
+    <!--
+    This button has 100dp for button itself, the outer frame is
+    resized. Button will stay intact
+    -->
+    <Button
+        android:id="@+id/list_item_sound_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        tools:text="Sound name">
+    </Button>
+
+</FrameLayout>
