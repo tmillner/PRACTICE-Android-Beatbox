@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+This button will have will not use a specific style
+   style="@style/BeatBoxButton.Strong"
+but will utilize change to all buttons styles
+-->
 <Button xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list_item_sound_button"
