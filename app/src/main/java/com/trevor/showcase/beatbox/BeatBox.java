@@ -1,6 +1,7 @@
 package com.trevor.showcase.beatbox;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -8,6 +9,7 @@ import android.nfc.Tag;
 import android.util.Log;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,7 +29,6 @@ public class BeatBox {
     private SoundPool mSoundPool;
     
     public BeatBox(Context context) {
-        super();
         mAssetManager = context.getAssets();
         // Even though the soundpool constructor below is deprecated, need
         //  to use it for compatibility (Lowest SDK version). Can't use builder
@@ -46,7 +47,8 @@ public class BeatBox {
             Log.e(TAG, "An error occured loading sounds!: ", e);
             return;
         }
-        
+
+        mSounds = new ArrayList<>();
         for (String filename : sounds) {
             try {
                 Sound sound = new Sound( SOUNDS_FOLDER + "/" + filename);
@@ -59,8 +61,8 @@ public class BeatBox {
     }
 
     private void load(Sound sound) throws IOException {
-        String assetPath = sound.getAssetPath();
-        Integer soundId = mSoundPool.load(assetPath, 1);
+        AssetFileDescriptor afd = mAssetManager.openFd(sound.getAssetPath());
+        Integer soundId = mSoundPool.load(afd, 1);
         sound.setSoundId(soundId);
     }
 

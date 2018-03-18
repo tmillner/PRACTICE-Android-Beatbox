@@ -33,9 +33,7 @@ public class BeatBoxFragment extends Fragment {
 
     private BeatBox mBeatBox;
 
-    private OnFragmentInteractionListener mListener;
-
-    public static BeatBoxFragment newInstance() {
+    public static Fragment newInstance() {
         return new BeatBoxFragment();
     }
 
@@ -85,31 +83,6 @@ public class BeatBoxFragment extends Fragment {
 
         return view;
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
 
     public class SoundHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
